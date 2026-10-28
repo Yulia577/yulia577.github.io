@@ -1,30 +1,257 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Мой первый сайт</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Корееведы в полях — открываем Корею</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-        background-color: #f3eee8;
-        color: #35483e;
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: 80px auto;
-        padding: 0 24px;
+      margin: 0;
+      background: #f3eee8;
+      color: #35483e;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    header, main, footer {
+      max-width: 1100px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .intro {
+      padding: 50px 0 30px;
+    }
+
+    .label {
+      color: #956447;
+      letter-spacing: 3px;
+      font-size: 13px;
     }
 
     h1 {
-        font-size: 48px;
+      max-width: 800px;
+      margin: 12px 0 20px;
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.12;
     }
 
-    p {
-        font-size: 22px;
-        line-height: 1.6;
+    .intro p {
+      max-width: 650px;
+      font-size: 20px;
     }
-</style>
+
+    .cover {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: #fffaf5;
+      border-radius: 18px;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      padding: 22px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 23px;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    .about {
+      margin: 60px 0 30px;
+      padding: 36px;
+      background: #dfe5dc;
+      border-radius: 20px;
+    }
+
+    .about h2 {
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 22px;
+      background: #35483e;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #526b5c;
+    }
+
+    footer {
+      font-size: 14px;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .intro {
+        padding-top: 24px;
+      }
+
+      .cover {
+        height: 260px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Привет! Это мой первый сайт</h1>
-    <p>Я учусь создавать сайты и понимать код.</p>
+  <header>
+    <div class="logo">Корееведы в полях</div>
+    <a href="#stories">Знакомиться с Кореей ↓</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="label">한국 · КОРЕЯ</div>
+      <h1>Корея, которую хочется узнавать</h1>
+      <p>
+        Дворцы, городские улочки и еда, ради которой
+        стоит свернуть с привычного маршрута.
+        Собираем впечатления и замечаем детали.
+      </p>
+    </section>
+
+    <img
+      class="cover"
+      src="Images/kyonbokkung.jpg"
+      alt="Традиционная архитектура дворца Кёнбоккун"
+    >
+
+    <section id="stories">
+      <h2>С чего начнём?</h2>
+
+      <div class="cards">
+        <article class="card">
+          <img
+            src="Images/kyonbokkung.jpg"
+            alt="Дворец Кёнбоккун"
+            loading="lazy"
+          >
+          <div class="card-text">
+            <h3>Места с историей</h3>
+            <p>
+              Резные крыши, просторные дворы и яркие узоры.
+              Знакомство с Кореей через её архитектуру.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="Images/pibimpab.jpg"
+            alt="Пибимпап с овощами и яйцом"
+            loading="lazy"
+          >
+          <div class="card-text">
+            <h3>Корея на вкус</h3>
+            <p>
+              Начнём с пибимпапа: рис, разноцветные овощи
+              и яйцо в одной миске. Перемешать — и пробовать!
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="Images/55685-1000x830.jpg"
+            alt="Городская улица в Корее"
+            loading="lazy"
+          >
+          <div class="card-text">
+            <h3>Просто гулять</h3>
+            <p>
+              Сворачивать в переулки, рассматривать вывески
+              и находить своё любимое место в большом городе.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>Продолжим знакомство?</h2>
+      <p>
+        «Корееведы в полях» — о языке, культуре
+        и повседневной жизни Кореи.
+        Больше наблюдений и историй — в Telegram.
+      </p>
+      <a class="button" href="https://t.me/korea_and_more">
+        Читать Telegram-канал ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    Корееведы в полях · Открываем Корею вместе
+  </footer>
 </body>
 </html>
